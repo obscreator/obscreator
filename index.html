@@ -3,131 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="obscreator - Templates de sites modernos e soluções digitais">
-  <meta name="keywords" content="obscreator, templates de sites, criação de sites, design digital">
-  <link rel="icon" href="img/logo.png" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta name="description" content="obscreator - Templates de sites e planos acessíveis">
   <title>obscreator</title>
+  <link rel="icon" href="img/logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <script>
-    function enviarWhatsApp(servico) {
-      const telefone = "5547996974276";
-      const mensagem = `Oi, vim do site obscreator e tenho interesse no ${servico}!`;
-      const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-      window.open(url, "_blank");
-    }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("nav-menu");
-      toggle.addEventListener("click", () => {
-        toggle.classList.toggle("active");
-        menu.classList.toggle("active");
-      });
-    });
-  </script>
+<!-- ===== HEADER ===== -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/logo.png" alt="obscreator logo">
+      <span class="brand-name gamer">obscreator</span>
+    </div>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="img/logo.png" alt="Logo">
-        <span class="brand-name">obscreator</span>
-      </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
 
-      <div class="menu-toggle" id="menu-toggle">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#servicos">Templates & Planos</a></li>
+      <li><a href="#decisao">Contato</a></li>
+    </ul>
+  </nav>
 
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="#servicos">Templates</a></li>
-      </ul>
-    </nav>
+  <!-- ===== BANNER ===== -->
+  <div class="banner">
+    <div class="banner-content banner-inner">
 
-    <div class="banner">
-      <div class="banner-content">
-        <h1>SEJA BEM-VINDO</h1>
-        <p>Templates de sites prontos para colocar seu negócio no ar</p>
+      <div class="banner-text">
+        <h1 class="gamer">SEJA BEM-VINDO</h1>
+        <p>Sites prontos, rápidos e acessíveis</p>
         <a href="#servicos" class="btn">Explorar</a>
       </div>
-    </div>
-  </header>
 
-  <!-- ===== SEÇÃO TEMPLATES ===== -->
-  <section id="servicos" class="servicos-section">
-    <h2 class="titulo-servicos">Templates de Sites Prontos</h2>
-    <p class="subtitulo-servicos">
-      Clique em um template para visualizar o site ao vivo.
+      <div class="banner-coffee">
+        <img src="img/cafe.png" alt="Café obscreator">
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<!-- ===== FAIXA CARROSSEL ===== -->
+<div class="faixa-marquee">
+  <div class="faixa-track">
+    <span>TENHA UM SITE AVANÇADO, FUNCIONAL E PROFISSIONAL COM A OBSCREATOR •</span>
+    <span>TENHA UM SITE AVANÇADO, FUNCIONAL E PROFISSIONAL COM A OBSCREATOR •</span>
+    <span>TENHA UM SITE AVANÇADO, FUNCIONAL E PROFISSIONAL COM A OBSCREATOR •</span>
+  </div>
+</div>
+
+<!-- ===== TEMPLATES & PLANOS ===== -->
+<section id="servicos" class="servicos-section">
+
+  <div class="templates-intro">
+    <h3>Escolha seu ponto de partida</h3>
+    <p>
+      Aqui você encontra os sites base. Eles servem como referência para escolher
+      o estilo, a estrutura e o visual do seu site final.
     </p>
+  </div>
 
-    <div class="servicos-grid">
+  <h2 class="titulo-servicos">Templates Prontos</h2>
 
-      <a class="servico-card" href="https://obscreator.github.io/barber-prime/" target="_blank">
-        <h3>💈 Template Barbearia</h3>
-        <p>Design moderno com foco em serviços, agenda e contato rápido.</p>
-        <span class="tag">Barbearias</span>
-      </a>
+  <div class="servicos-grid">
+    <a class="servico-card" href="https://obscreator.github.io/barber-prime/" target="_blank">
+      <h3>💈 Barbearia</h3>
+      <p>Visual moderno com foco em serviços.</p>
+    </a>
 
-      <a class="servico-card" href="https://obscreator.github.io/techcell-site/" target="_blank">
-        <h3>📱 Template Tech Cell</h3>
-        <p>Ideal para lojas de celulares, assistência técnica e eletrônicos.</p>
-        <span class="tag">Lojas de tecnologia</span>
-      </a>
+    <a class="servico-card" href="https://obscreator.github.io/techcell-site/" target="_blank">
+      <h3>📱 Loja Tech</h3>
+      <p>Assistência técnica e vendas.</p>
+    </a>
 
-      <a class="servico-card" href="https://obscreator.github.io/8doces-doceria/" target="_blank">
-        <h3>🍰 Template Doceria</h3>
-        <p>Visual atrativo para cardápio, redes sociais e pedidos.</p>
-        <span class="tag">Docerias</span>
-      </a>
+    <a class="servico-card" href="https://obscreator.github.io/8doces-doceria/" target="_blank">
+      <h3>🍰 Doceria</h3>
+      <p>Cardápio e redes sociais.</p>
+    </a>
 
-      <a class="servico-card" href="https://obscreator.github.io/landing-page-pessoal/" target="_blank">
-        <h3>🧑‍💻 Template Landing Page</h3>
-        <p>Perfeito para freelancers, criadores e portfólios pessoais.</p>
-        <span class="tag">Portfólio pessoal</span>
-      </a>
+    <a class="servico-card" href="https://obscreator.github.io/landing-page-pessoal/" target="_blank">
+      <h3>🧑‍💻 Portfólio</h3>
+      <p>Landing page pessoal.</p>
+    </a>
+  </div>
 
+  <!-- ===== PLANOS ===== -->
+  <h2 class="titulo-servicos">Planos</h2>
+
+  <div class="servicos-grid">
+    <div class="servico-card plano">
+      <h3>Plano Básico</h3>
+      <strong class="preco">R$ 48,99</strong>
+      <ul>
+        <li>Troca de textos</li>
+        <li>Troca de imagens</li>
+        <li>Links e redes</li>
+        <li>Site no ar</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- ===== SOCIAL ===== -->
-  <section class="social">
-    <h2>Conecte-se Comigo</h2>
-    <div class="social-links">
-      <a href="https://instagram.com/cauuans" target="_blank">
-        <img src="img/instagram.png" alt="Instagram">
-      </a>
-      <a href="https://youtube.com/@auth.trevor" target="_blank">
-        <img src="img/youtube.png" alt="YouTube">
+    <div class="servico-card plano destaque">
+      <h3>Plano Personalizado</h3>
+      <strong class="preco">R$ 150</strong>
+      <ul>
+        <li>Cores e layout</li>
+        <li>Novas sections</li>
+        <li>Animações</li>
+        <li>WhatsApp e formulário</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SEÇÃO DECISÃO ===== -->
+<section class="decisao" id="decisao">
+  <div class="decisao-container">
+
+    <div class="decisao-texto">
+      <h2>Máximo esforço<br>pelo seu negócio</h2>
+      <p>
+        Você já viu os templates, planos e possibilidades.<br>
+        Agora é só me chamar e dizer o que você precisa.
+      </p>
+    </div>
+
+    <div class="decisao-acao">
+      <a
+        href="https://wa.me/5547996974276?text=Oi,%20vim%20do%20site%20e%20ja%20sei%20o%20que%20pedir!"
+        target="_blank"
+        class="btn decisao-btn"
+      >
+        Já sei o que pedir!
       </a>
     </div>
-  </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img src="img/logo.png" alt="Logo">
-        <span class="brand">obscreator</span>
-      </div>
+  </div>
+</section>
 
-      <p class="footer-quote">“Feito com ☕ e código por obscreator.”</p>
+<!-- ===== SOCIAL ===== -->
+<section class="social">
+  <h2>Contato</h2>
+  <div class="social-links">
+    <a href="https://instagram.com/cauuans" target="_blank">
+      <img src="img/instagram.png" alt="Instagram">
+    </a>
+    <a href="https://facebook.com/" target="_blank">
+      <img src="img/facebook.png" alt="Facebook">
+    </a>
+  </div>
+</section>
 
-      <div class="footer-social">
-        <a href="https://instagram.com/cauuans" target="_blank">
-          <img src="img/instagram.png" alt="">
-        </a>
-        <a href="https://youtube.com/@auth.trevor" target="_blank">
-          <img src="img/youtube.png" alt="">
-        </a>
-      </div>
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p class="footer-copy">© 2025 obscreator</p>
+</footer>
 
-      <p class="footer-copy">© 2025 obscreator. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+<script>
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-menu");
+toggle.onclick = () => {
+  toggle.classList.toggle("active");
+  menu.classList.toggle("active");
+};
+</script>
+
 </body>
 </html>

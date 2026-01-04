@@ -1,3 +1,12 @@
+/* ===== VARIÁVEIS DE COR ===== */
+:root {
+  --primary: #7dd3fc;
+  --primary-glow: #38bdf8;
+  --accent: #1e40af;
+  --bg-dark: #0b0b0b;
+}
+
+/* ===== RESET ===== */
 html, body {
   width: 100%;
   overflow-x: hidden;
@@ -8,15 +17,20 @@ html, body {
   color: #fff;
 }
 
+/* ===== FONTE GAMER ===== */
+.gamer {
+  font-family: "Press Start 2P", cursive;
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(90deg, #0b0b0b 0%, #200028 100%);
+  background: linear-gradient(90deg, #020617 0%, #020617 60%, #0a2540 100%);
   padding: 15px 30px;
-  border-bottom: 2px solid #ff00ff;
-  box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+  border-bottom: 2px solid var(--primary);
+  box-shadow: 0 0 15px rgba(125, 211, 252, 0.4);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -30,17 +44,15 @@ html, body {
 
 .logo img {
   width: 45px;
-  height: 45px;
 }
 
 .brand-name {
-  font-family: "Press Start 2P", cursive;
-  color: #ff00ff;
   font-size: 12px;
-  text-shadow: 0 0 10px #ff1e00, 0 0 20px #ff00ff;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary-glow);
 }
 
-/* NAV MENU */
+/* ===== NAV MENU ===== */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -52,18 +64,17 @@ html, body {
 .nav-menu a {
   text-decoration: none;
   color: #fff;
-  font-family: "Press Start 2P", cursive;
   font-size: 10px;
   text-transform: uppercase;
   transition: 0.3s;
 }
 
 .nav-menu a:hover {
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff1e00, 0 0 20px #ff00ff;
+  color: var(--primary);
+  text-shadow: 0 0 10px var(--primary-glow);
 }
 
-/* MENU MOBILE */
+/* ===== MENU MOBILE ===== */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -86,11 +97,11 @@ html, body {
     position: absolute;
     top: 70px;
     right: 0;
-    background: #0b0b0b;
+    background: var(--bg-dark);
     flex-direction: column;
     width: 100%;
     display: none;
-    border-top: 2px solid #ff00ff;
+    border-top: 2px solid var(--primary);
     padding: 20px;
   }
   .nav-menu.active { display: flex; }
@@ -103,14 +114,13 @@ html, body {
   background-size: cover;
   background-position: center;
   padding: 120px 20px;
-  text-align: center;
 }
 
 .banner::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0,0,0,0.45);
   backdrop-filter: blur(3px);
 }
 
@@ -119,54 +129,116 @@ html, body {
   z-index: 2;
 }
 
+.banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.banner-text {
+  text-align: left;
+}
+
 .banner h1 {
-  font-family: "Press Start 2P", cursive;
   font-size: 24px;
-  text-shadow: 0 0 10px #3a4fd7, 0 0 20px #ff1e00;
   margin-bottom: 10px;
+  text-shadow: 0 0 15px var(--primary-glow);
 }
 
 .banner p {
   font-size: 14px;
-  color: #ff9a9a;
-  text-shadow: 0 0 10px #5d72ff;
+  color: #cfefff;
 }
 
+/* café flutuante */
+.banner-coffee img {
+  width: 180px;
+  animation: flutuar 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 25px var(--primary-glow));
+}
+
+@keyframes flutuar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* ===== BOTÃO ===== */
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background: #770061;
+  background: var(--accent);
   color: #fff;
   border-radius: 30px;
-  font-family: "Press Start 2P", cursive;
   text-decoration: none;
   transition: 0.3s;
 }
 .btn:hover {
-  background: #ff00ff;
-  box-shadow: 0 0 15px #ff00ff;
+  background: var(--primary);
+  box-shadow: 0 0 20px var(--primary-glow);
 }
 
-/* ===== TEMPLATES ===== */
-.servicos-section {
-  background: #0b0b0b;
-  text-align: center;
+/* ===== FAIXA CARROSSEL ===== */
+.faixa-marquee {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--accent), var(--primary-glow));
+  padding: 12px 0;
+  border-top: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.faixa-track {
+  display: flex;
+  width: fit-content;
+  animation: marquee 20s linear infinite;
+}
+
+.faixa-track span {
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  padding: 0 40px;
+  letter-spacing: 1px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ===== SECTIONS ===== */
+.servicos-section,
+.social {
   padding: 80px 20px;
+  text-align: center;
+  background: var(--bg-dark);
 }
 
-.titulo-servicos {
-  font-family: "Press Start 2P", cursive;
-  color: #ff00ff;
-  font-size: 16px;
-  text-shadow: 0 0 10px #ff00ff;
+/* ===== INTRO ===== */
+.templates-intro {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  padding: 25px;
+  border: 2px dashed var(--primary);
+  border-radius: 15px;
+  background: linear-gradient(145deg, #0f172a, #020617);
+  box-shadow: 0 0 20px rgba(125,211,252,0.25);
 }
 
-.subtitulo-servicos {
-  color: #bbb;
+.templates-intro h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.templates-intro p {
   font-size: 13px;
-  margin-bottom: 40px;
+  color: #dbeafe;
 }
 
+/* ===== GRID ===== */
 .servicos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -175,70 +247,101 @@ html, body {
   margin: 0 auto;
 }
 
-/* agora os cards são links */
+/* ===== CARDS ===== */
 .servico-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  background: linear-gradient(145deg, #111, #181818);
-  border: 2px solid #ff00ff;
+  background: #020617;
+  border: 2px solid var(--primary);
   border-radius: 15px;
   padding: 25px;
-  transition: 0.4s;
-  box-shadow: 0 0 10px rgba(255,0,255,0.2);
-  animation: fadeInUp 0.6s ease both;
-}
-
-.servico-card h3 {
-  font-family: "Press Start 2P", cursive;
-  font-size: 12px;
+  text-decoration: none;
   color: #fff;
-  margin-bottom: 10px;
-}
-
-.servico-card p {
-  font-size: 13px;
-  color: #ccc;
-  line-height: 1.4;
+  transition: 0.4s;
+  box-shadow: 0 0 15px rgba(125,211,252,0.25);
 }
 
 .servico-card:hover {
   transform: translateY(-6px) scale(1.04);
-  box-shadow: 0 0 30px #ff00ff, 0 0 50px #ff1e00;
+  box-shadow: 0 0 35px var(--primary-glow);
 }
 
-/* TAG DOS TEMPLATES */
-.tag {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 5px 10px;
-  font-size: 10px;
-  border-radius: 20px;
-  border: 1px solid #ff00ff;
-  color: #ff00ff;
-  font-family: "Press Start 2P", cursive;
-  box-shadow: 0 0 10px rgba(255,0,255,0.4);
+/* ===== PLANOS ===== */
+.plano {
+  position: relative;
+  padding: 30px 25px;
 }
 
-/* animação */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+.plano .preco {
+  font-size: 26px;
+  color: var(--primary);
+  text-shadow: 0 0 15px var(--primary-glow);
+}
+
+.plano ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plano li {
+  font-size: 13px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.plano li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* ===== DESTAQUE ===== */
+.plano {
+  position: relative;
+  background: linear-gradient(160deg, #020617, #020617);
+  border-radius: 18px;
+  padding: 30px 25px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 25px rgba(125,211,252,0.35);
+  transition: 0.3s ease;
+}
+
+.plano:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 0 45px var(--primary-glow);
+}
+
+
+/* ===== DECISÃO ===== */
+.decisao {
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #020617, #000);
+  border-top: 2px solid var(--primary);
+}
+
+.decisao-container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.decisao-texto h2 {
+  font-size: 32px;
+  color: var(--primary);
+  text-shadow: 0 0 20px var(--primary-glow);
+}
+
+.decisao-btn {
+  padding: 16px 28px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-glow));
+  color: #000;
+  font-weight: bold;
+  border-radius: 40px;
 }
 
 /* ===== SOCIAL ===== */
-.social {
-  background-color: #0b0b0b;
-  text-align: center;
-  padding: 60px 20px;
-}
-.social h2 {
-  font-family: "Press Start 2P", cursive;
-  color: #ff00ff;
-  font-size: 16px;
-  margin-bottom: 30px;
-  text-shadow: 0 0 10px #ff1e00, 0 0 20px #ff00ff;
-}
 .social-links {
   display: flex;
   justify-content: center;
@@ -246,70 +349,47 @@ html, body {
 }
 .social-links img {
   width: 60px;
-  filter: drop-shadow(0 0 10px #ff00ff);
-  transition: transform 0.3s, filter 0.3s;
-}
-.social-links img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 25px #ff1e00);
+  filter: drop-shadow(0 0 10px var(--primary));
 }
 
 /* ===== FOOTER ===== */
 footer {
-  background: #0b0b0b;
+  background: #000;
   padding: 30px;
-  text-align: center;
-  border-top: 2px solid #ff00ff;
-  box-shadow: 0 -2px 15px rgba(255,0,255,0.3);
-}
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.footer-logo img {
-  width: 40px;
-}
-.footer-logo .brand {
-  font-family: "Press Start 2P", cursive;
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff1e00, 0 0 20px #ff00ff;
-}
-.footer-quote {
-  color: #ccc;
-  font-size: 12px;
-  font-style: italic;
-}
-.footer-social {
-  display: flex;
-  gap: 15px;
-}
-.footer-social img {
-  width: 25px;
-  filter: drop-shadow(0 0 10px #ff00ff);
-  transition: 0.3s;
-}
-.footer-social img:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 20px #ff1e00);
+  border-top: 2px solid var(--primary);
 }
 .footer-copy {
-  font-size: 10px;
+  font-size: 11px;
   color: #888;
 }
 
 /* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .banner-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-text {
+    text-align: center;
+  }
+
+  .banner-coffee img {
+    width: 130px;
+  }
+
+  .decisao-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .decisao-texto h2 {
+    font-size: 24px;
+  }
+}
+
 @media (max-width: 480px) {
   .banner h1 { font-size: 16px; }
   .banner p { font-size: 12px; }
   .btn { font-size: 10px; padding: 8px 14px; }
-  .brand-name, .titulo-servicos { font-size: 10px; }
-  .servico-card h3 { font-size: 10px; }
-  .servico-card p { font-size: 12px; }
 }
