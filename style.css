@@ -126,7 +126,6 @@ html, body {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(3px);
 }
 
 .banner-inner {
@@ -186,7 +185,6 @@ html, body {
 .banner-coffee img {
   width: 190px;
   animation: flutuar 4s ease-in-out infinite;
-  filter: drop-shadow(0 0 25px var(--primary-glow));
 }
 
 @keyframes flutuar {
@@ -432,3 +430,4 @@ footer {
     width: 110px;
   }
 }
+
